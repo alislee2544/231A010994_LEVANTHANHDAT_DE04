@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CineVault — Movie Discovery App</title>
+<meta name="description" content="Movie Discovery App — khám phá, lọc và đánh giá phim yêu thích. Lê Văn Thành Đạt - 231A010884">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<!-- =========================
+        HEADER
+========================== -->
+<header class="site-header">
+  <div class="logo">
+    <h1>Cine<span>Vault</span></h1>
+    <p>Movie Discovery App — Lê Văn Thành Đạt</p>
+  </div>
+
+  <div class="header-actions">
+    <a class="assignment-btn" href="#" target="_blank" rel="noopener" id="link35">
+      <!-- TỰ CHÈN ẢNH KẾT QUẢ BÀI 35 VÀO ĐÂY: thay src bên dưới -->
+      <img src="images/bai35.jpg" alt="Kết quả bài tập 35" id="thumb35"class="hidden-image">
+      <span>Bài tập 35</span>
+    </a>
+
+    <a class="assignment-btn assignment-btn-link" href="https://alislee2544.github.io/LEVANTHANHDAT/" target="_blank" rel="noopener" id="link36">
+      <!-- TỰ CHÈN LINK KẾT QUẢ BÀI 36 VÀO href PHÍA TRÊN -->
+      <i aria-hidden="true">🔗</i>
+      <span>Bài tập 36</span>
+    </a>
+
+    <button class="theme-toggle" id="themeToggle" aria-label="Chuyển chế độ sáng / tối">
+      <span class="toggle-track"><span class="toggle-thumb"></span></span>
+      <span class="toggle-label" id="themeLabel">Tối</span>
+    </button>
+  </div>
+</header>
+
+<!-- =========================
+        HERO
+========================== -->
+<section class="hero">
+  <div class="hero-inner fade">
+    <p class="eyebrow">Bộ sưu tập điện ảnh</p>
+    <h2>Khám phá những bộ phim đáng xem</h2>
+    <p class="hero-sub">Lọc theo thể loại, tìm kiếm theo tên, xem chi tiết và chấm điểm những bộ phim bạn yêu thích.</p>
+  </div>
+</section>
+
+<!-- =========================
+        APP LAYOUT (GRID)
+========================== -->
+<main class="app-layout">
+
+  <!-- SIDEBAR -->
+  <aside class="sidebar fade">
+    <div class="sidebar-block">
+      <label class="sidebar-label" for="searchInput">Tìm kiếm phim</label>
+      <input type="text" id="searchInput" placeholder="Nhập tên phim...">
+    </div>
+
+    <div class="sidebar-block">
+      <p class="sidebar-label">Thể loại</p>
+      <div id="genreList" class="genre-list">
+        <!-- JS tự sinh checkbox thể loại -->
+      </div>
+    </div>
+
+    <button class="btn-reset" id="resetBtn">Xoá bộ lọc</button>
+
+    <div class="sidebar-count">
+      <span id="resultCount">0</span> phim được tìm thấy
+    </div>
+  </aside>
+
+  <!-- MOVIE GRID -->
+  <section class="movie-section">
+    <div class="movie-grid" id="movieGrid">
+      <!-- JS tự sinh movie card -->
+    </div>
+    <p class="empty-state" id="emptyState" hidden>Không tìm thấy bộ phim nào phù hợp.</p>
+  </section>
+
+</main>
+
+<!-- =========================
+        FOOTER
+========================== -->
+<footer>
+  <h3>CineVault</h3>
+  <p>Thiết kế bởi: <strong>Lê Văn Thành Đạt</strong></p>
+  <p>MSSV: <strong>231A010884</strong></p>
+  <p>HTML5 | CSS3 | JavaScript</p>
+  <p>© 2026 CineVault. All Rights Reserved.</p>
+</footer>
+
+<!-- =========================
+        MODAL CHI TIẾT PHIM
+========================== -->
+<div class="modal-overlay" id="modalOverlay">
+  <div class="modal-box" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+    <button class="modal-close" id="modalClose" aria-label="Đóng">×</button>
+    <div class="modal-grid">
+      <img id="modalPoster" src="" alt="">
+      <div class="modal-info">
+        <span class="modal-year" id="modalYear"></span>
+        <h2 id="modalTitle"></h2>
+        <div class="modal-genres" id="modalGenres"></div>
+        <p class="modal-meta"><strong>Đạo diễn:</strong> <span id="modalDirector"></span></p>
+        <p class="modal-meta"><strong>Diễn viên:</strong> <span id="modalCast"></span></p>
+        <p class="modal-desc" id="modalDesc"></p>
+
+        <div class="modal-rating">
+          <span>Đánh giá của bạn:</span>
+          <div class="stars" id="modalStars" data-id=""></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="toast" id="toast"></div>
+
+<script src="js/app.js"></script>
+</body>
+</html>
